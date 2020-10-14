@@ -80,7 +80,12 @@ let menuTemplate = [
                 accelerator: 'CTRL+N',
                 click() {
 
-                    janela2 = new BrowserWindow()
+                    janela2 = new BrowserWindow({
+
+                        width: 500,
+                        height: 500,
+                        title: 'Janela 2'
+                    })
                     janela2.loadFile('./janela2.html')
                 }
             }
