@@ -1,6 +1,6 @@
 const electron = require('electron')
 const sizeOf = require('image-size')
-const { app, BrowserWindow, ipcMain } = electron
+const { app, BrowserWindow, ipcMain, Menu } = electron
 
 //mudamos a variavel de const para let para podermos fazer uma atribuicao a ela mais tarde
 let mainWindow
@@ -17,13 +17,6 @@ app.on('ready', () => {
     })
 
     mainWindow.loadFile('./index.html')
-
-
-
-
-
-
-
 })
 
 
@@ -39,3 +32,36 @@ ipcMain.on('teste', (e, data) => {
 
     console.log(data)
 })
+
+
+let menuTemplate = [
+    {
+        label: 'File'
+    },
+
+    {
+        label: 'Edit'
+    },
+
+    {
+        label: 'Selection'
+    },
+
+    {
+        label: 'View'
+    },
+
+    {
+        label: 'Go'
+    },
+
+    {
+        label: 'Run'
+    },
+
+    {
+        label: 'Terminal'
+    }
+
+
+]
