@@ -22,7 +22,7 @@ enviar.onclick = (e) => {
 
 
 
-    ipcRenderer.send('teste', { teste: "teste de envio de evento" })
+    ipcRenderer.send('teste', input.values)
 
 
 }

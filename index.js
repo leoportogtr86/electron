@@ -30,3 +30,9 @@ ipcMain.on('evento', (e, data) => {
 
     console.log(data)
 })
+
+
+ipcMain.on('teste', (e, data) => {
+
+    console.log(data)
+})
