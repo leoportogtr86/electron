@@ -30,4 +30,5 @@ enviar.onclick = (e) => {
 ipcRenderer.on('evento_server', (e, data) => {
 
     console.log(data)
+    info.innerHTML = data
 })
