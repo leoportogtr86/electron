@@ -1,1 +1,16 @@
 console.log('hello electron')
+
+let enviar = document.getElementById('enviar')
+let input = document.getElementById('input')
+let info = document.getElementById('info')
+
+enviar.onclick = (e) => {
+
+    e.preventDefault()
+    console.log('arquivo submetido')
+    console.log(e)
+
+    console.log(input.files)
+
+
+}
