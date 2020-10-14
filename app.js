@@ -17,6 +17,10 @@ app.on('ready', () => {
     })
 
     mainWindow.loadFile('./index.html')
+
+    const mainMenu = Menu.buildFromTemplate(menuTemplate)
+
+    Menu.setApplicationMenu(mainMenu)
 })
 
 
@@ -25,6 +29,7 @@ ipcMain.on('evento', (e, data) => {
     console.log(data)
 
     mainWindow.webContents.send('evento_server', data + ' => msg vinda do servidor')
+
 })
 
 
