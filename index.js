@@ -1,6 +1,6 @@
 const electron = require('electron')
 const sizeOf = require('image-size')
-const { app, BrowserWindow } = electron
+const { app, BrowserWindow, ipcMain } = electron
 
 
 
@@ -12,8 +12,7 @@ app.on('ready', () => {
 
         webPreferences: {
 
-            nodeIntegration: true,
-            webSecurity: false
+            nodeIntegration: true
         }
     })
     janela_principal.loadURL(`file://${__dirname}/index.html`)
@@ -24,6 +23,10 @@ app.on('ready', () => {
 
 
 
+})
 
 
+ipcMain.on('evento', (e, data) => {
+
+    console.log(data)
 })
