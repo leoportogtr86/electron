@@ -3,23 +3,24 @@ const sizeOf = require('image-size')
 const { app, BrowserWindow, ipcMain } = electron
 
 //mudamos a variavel de const para let para podermos fazer uma atribuicao a ela mais tarde
-let janela_principal
+let mainWindow
 
 app.on('ready', () => {
 
 
-    janela_principal = new BrowserWindow({
+    mainWindow = new BrowserWindow({
 
         webPreferences: {
 
             nodeIntegration: true
         }
     })
-    janela_principal.loadURL(`file://${__dirname}/index.html`)
+
+    mainWindow.loadFile('./index.html')
 
 
 
-    //file://${__dirname}/index.html
+
 
 
 
@@ -30,7 +31,7 @@ ipcMain.on('evento', (e, data) => {
 
     console.log(data)
 
-    janela_principal.webContents.send('evento_server', data + ' => msg vinda do servidor')
+    mainWindow.webContents.send('evento_server', data + ' => msg vinda do servidor')
 })
 
 
