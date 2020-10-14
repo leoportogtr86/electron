@@ -1,8 +1,8 @@
 console.log('hello electron')
 
 let enviar = document.getElementById('enviar')
-let input = document.getElementById('input')
-let info = document.getElementById('info')
+let { path } = document.getElementById('input')
+let info = document.getElementById('info').files[0]
 const electron = require('electron')
 const { ipcRenderer } = electron
 
@@ -12,8 +12,10 @@ enviar.onclick = (e) => {
     console.log('arquivo submetido')
     console.log(e)
 
-    console.log(input.files)
-    info.innerHTML = input.files[0]
+    console.log(path)
+    info.innerHTML = path
+
+    ipcRenderer.send('dados_imagem', path)
 
 
 }
