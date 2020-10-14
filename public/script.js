@@ -11,6 +11,7 @@ enviar.onclick = (e) => {
     console.log(e)
 
     console.log(input.files)
+    info.innerHTML = input.files[0]
 
 
 }
