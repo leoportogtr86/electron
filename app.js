@@ -12,7 +12,8 @@ app.on('ready', () => {
 
         webPreferences: {
 
-            nodeIntegration: true
+            nodeIntegration: true,
+            webSecurity: false
         }
     })
 
@@ -61,6 +62,14 @@ let menuTemplate = [
             {
 
                 label: 'Open Workspace'
+            },
+
+            {
+                label: 'Exit',
+                click() {
+
+                    app.quit()
+                }
             }
         ]
     },
