@@ -4,6 +4,7 @@ const { app, BrowserWindow, ipcMain, Menu } = electron
 
 //mudamos a variavel de const para let para podermos fazer uma atribuicao a ela mais tarde
 let mainWindow
+let janela2
 
 app.on('ready', () => {
 
@@ -72,7 +73,18 @@ let menuTemplate = [
 
                     app.quit()
                 }
+            },
+
+            {
+                label: "Criar Segunda Janela",
+                accelerator: 'CTRL+N',
+                click() {
+
+                    janela2 = new BrowserWindow()
+                    janela2.loadFile('./janela2.html')
+                }
             }
+
         ]
     },
 
