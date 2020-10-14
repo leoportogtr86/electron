@@ -7,7 +7,9 @@ const { app, BrowserWindow } = electron
 app.on('ready', () => {
 
 
-    new BrowserWindow({})
+    const janela_principal = new BrowserWindow({})
+    janela_principal.loadURL(`file://${__dirname}/index.html`)
+
 
 
 })
