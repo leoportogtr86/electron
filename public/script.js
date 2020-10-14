@@ -4,6 +4,7 @@ let enviar = document.getElementById('enviar')
 let input = document.getElementById('input')
 let info = document.getElementById('info')
 const electron = require('electron')
+const { ipcRenderer } = electron
 
 enviar.onclick = (e) => {
 
