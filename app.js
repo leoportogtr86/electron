@@ -24,6 +24,11 @@ app.on('ready', () => {
     const mainMenu = Menu.buildFromTemplate(menuTemplate)
 
     Menu.setApplicationMenu(mainMenu)
+
+    mainWindow.on('closed', () => {
+
+        app.quit()
+    })
 })
 
 
