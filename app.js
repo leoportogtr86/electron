@@ -18,7 +18,7 @@ app.on('ready', () => {
         }
     })
 
-    mainWindow.loadFile('./index.html')
+    mainWindow.loadFile('./views/index.html')
     // mainWindow.loadURL('https://truefire.com/robben-ford-guitar-lessons/solo-revolution-diminished-lines/solo-revolution-diminished-lines-introduction/v41955')
 
     const mainMenu = Menu.buildFromTemplate(menuTemplate)
@@ -91,7 +91,7 @@ let menuTemplate = [
                         height: 500,
                         title: 'Janela 2'
                     })
-                    janela2.loadFile('./janela2.html')
+                    janela2.loadFile('./views/janela2.html')
                 }
             }
 
@@ -124,3 +124,25 @@ let menuTemplate = [
 
 
 ]
+
+if (process.env.NODE_env !== 'production') {
+
+    menuTemplate.push({
+
+        label: 'Dev',
+        submenu: [
+
+            {
+                label: 'Dev Tools',
+                accelerator: 'Ctrl+Shift+I',
+                click(item, focusedWindow) {
+
+                    focusedWindow.toggleDevTools()
+
+
+                }
+            }
+        ]
+    })
+
+}
