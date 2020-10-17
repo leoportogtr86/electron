@@ -47,7 +47,7 @@ ipcMain.on('teste', (e, data) => {
     console.log(data)
 })
 
-ipcMain.on('frontback', (e, data) => {
+ipcMain.on('click', (e, data) => {
 
     console.log(data)
 

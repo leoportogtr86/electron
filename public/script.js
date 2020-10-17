@@ -4,6 +4,7 @@ console.log('hello electron')
 const electron = require('electron')
 const { ipcRenderer } = electron
 let botao = document.getElementById('botao')
+let h1 = document.getElementById('h1')
 
 
 ipcRenderer.on('evento_server', (e, data) => {
@@ -25,3 +26,12 @@ ipcRenderer.on('reload', () => {
 
     window.location.reload()
 })
+
+h1.onclick = function () {
+
+    ipcRenderer.send('click', {
+
+        data: 'teste'
+    })
+
+}
