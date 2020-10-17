@@ -54,6 +54,11 @@ ipcMain.on('click', (e, data) => {
 
 })
 
+ipcMain.on('close', (e, data) => {
+
+    janela2.close()
+})
+
 
 
 let menuTemplate = [
@@ -96,6 +101,12 @@ let menuTemplate = [
                 click() {
 
                     janela2 = new BrowserWindow({
+
+                        webPreferences: {
+
+                            nodeIntegration: true,
+                            webSecurity: false
+                        },
 
                         width: 500,
                         height: 500,
