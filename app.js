@@ -124,7 +124,17 @@ let menuTemplate = [
     },
 
     {
-        label: 'Run'
+        label: 'Run',
+        submenu: [
+            {
+                label: 'Reload',
+                accelerator: 'CTRL+R',
+                click() {
+
+                    mainWindow.webContents.send('reload', 'reload')
+                }
+            }
+        ]
     },
 
     {

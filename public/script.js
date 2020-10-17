@@ -20,3 +20,8 @@ botao.onclick = function () {
     ipcRenderer.send('frontback', 'msg vinda do front para o back')
 
 }
+
+ipcRenderer.on('reload', () => {
+
+    window.location.reload()
+})
