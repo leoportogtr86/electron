@@ -35,3 +35,8 @@ h1.onclick = function () {
     })
 
 }
+
+ipcRenderer.on('resposta', (e, data) => {
+
+    console.log(data)
+})

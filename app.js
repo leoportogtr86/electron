@@ -50,6 +50,7 @@ ipcMain.on('teste', (e, data) => {
 ipcMain.on('click', (e, data) => {
 
     console.log(data)
+    mainWindow.webContents.send('resposta', data)
 
 })
 
