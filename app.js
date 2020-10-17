@@ -57,6 +57,9 @@ ipcMain.on('click', (e, data) => {
 ipcMain.on('close', (e, data) => {
 
     janela2.close()
+    janela2 = null
+
+    //desalocando memoria
 })
 
 
