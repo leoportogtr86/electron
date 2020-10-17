@@ -6,8 +6,9 @@ const { app, BrowserWindow, ipcMain, Menu } = electron
 let mainWindow
 let janela2
 
-app.on('ready', () => {
 
+
+app.on('ready', () => {
 
     mainWindow = new BrowserWindow({
 
@@ -46,6 +47,13 @@ ipcMain.on('teste', (e, data) => {
     console.log(data)
 })
 
+ipcMain.on('frontback', (e, data) => {
+
+    console.log(data)
+
+})
+
+
 
 let menuTemplate = [
     {
@@ -53,6 +61,7 @@ let menuTemplate = [
         submenu: [
             {
                 label: 'New File'
+
             },
 
             {
