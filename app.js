@@ -123,6 +123,13 @@ let menuTemplate = [
                         title: 'Janela 2'
                     })
                     janela2.loadFile('./views/janela2.html')
+
+                    if (process.platform !== 'darwin') {
+
+                        janela2.setMenu(null)
+
+
+                    }
                 }
             }
 
