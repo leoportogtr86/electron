@@ -182,6 +182,13 @@ if (process.env.NODE_env !== 'production') {
 
 
                 }
+            },
+
+            {
+                role: 'reload'
+
+                //lista de atalhos para acessar as funcionalidades prontas do menu
+                //https://www.electronjs.org/docs/api/menu-item#role
             }
         ]
     })
