@@ -15,5 +15,6 @@ close.onclick = function () {
 enviar.onclick = function () {
 
     ipcRenderer.send('mensagem', msg.value)
+    ipcRenderer.send('close', 'close')
 
 }
