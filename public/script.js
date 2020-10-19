@@ -5,6 +5,7 @@ const electron = require('electron')
 const { ipcRenderer } = electron
 let botao = document.getElementById('botao')
 let h1 = document.getElementById('h1')
+let destino = document.getElementById('destino')
 
 
 ipcRenderer.on('evento_server', (e, data) => {
@@ -39,4 +40,11 @@ h1.onclick = function () {
 ipcRenderer.on('resposta', (e, data) => {
 
     console.log(data)
+})
+
+ipcRenderer.on('mensagem_main', (e, data) => {
+
+    destino.innerHTML = data
+
+
 })

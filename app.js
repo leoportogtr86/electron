@@ -62,6 +62,13 @@ ipcMain.on('close', (e, data) => {
     //desalocando memoria
 })
 
+ipcMain.on('mensagem', (e, data) => {
+
+    mainWindow.webContents.send('mensagem_main', data)
+
+
+})
+
 
 
 let menuTemplate = [
