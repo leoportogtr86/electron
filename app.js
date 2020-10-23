@@ -5,6 +5,7 @@ const { app, BrowserWindow, ipcMain, Menu, Tray } = electron
 //mudamos a variavel de const para let para podermos fazer uma atribuicao a ela mais tarde
 let mainWindow
 let janela2
+let janela3
 
 
 
@@ -83,6 +84,8 @@ ipcMain.on('mensagem', (e, data) => {
 
 })
 
+
+
 let bandejaTemplate = [
 
     {
@@ -91,12 +94,13 @@ let bandejaTemplate = [
         click() {
 
             console.log('Você clicou no label 1')
-            let janela3 = new BrowserWindow({
+            janela3 = new BrowserWindow({
 
                 width: 400,
                 height: 400,
                 frame: false,
-                resizable: false
+                resizable: false,
+                show: false
             })
             janela3.loadFile('./views/janela3.html')
 
@@ -104,10 +108,12 @@ let bandejaTemplate = [
     },
     {
 
-        label: 'Label 2',
+        label: 'Janela Visível',
         click() {
 
             console.log('Você clicou no label 2')
+            janela3.show()
+
         }
     },
     {
