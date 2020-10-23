@@ -13,9 +13,12 @@ app.on('ready', () => {
     const tray = new Tray('./public/assets/img/charger.png')
     tray.setToolTip('Aplicação criada com electron js')
 
+
     tray.on('click', () => {
 
         console.log('Ícone de bandeja clicado')
+
+
     })
 
     mainWindow = new BrowserWindow({
@@ -84,10 +87,22 @@ let bandejaTemplate = [
 
     {
 
-        label: 'Label 1',
+        label: 'Nova Janela',
         click() {
 
             console.log('Você clicou no label 1')
+            let janela3 = new BrowserWindow({
+
+                webPreferences: {
+
+                    nodeIntegration: true,
+                    width: 500,
+                    height: 500,
+                    title: 'Janela 3'
+                }
+            })
+            janela3.loadFile('./views/janela3.html')
+
         }
     },
     {
