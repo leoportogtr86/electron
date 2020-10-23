@@ -31,6 +31,9 @@ app.on('ready', () => {
     // mainWindow.loadURL('https://truefire.com/robben-ford-guitar-lessons/solo-revolution-diminished-lines/solo-revolution-diminished-lines-introduction/v41955')
 
     const mainMenu = Menu.buildFromTemplate(menuTemplate)
+    const contextMenu = Menu.buildFromTemplate(bandejaTemplate)
+
+    tray.setContextMenu(contextMenu)
 
     Menu.setApplicationMenu(mainMenu)
 
@@ -76,6 +79,42 @@ ipcMain.on('mensagem', (e, data) => {
 
 
 })
+
+let bandejaTemplate = [
+
+    {
+
+        label: 'Label 1',
+        click() {
+
+            console.log('Você clicou no label 1')
+        }
+    },
+    {
+
+        label: 'Label 2',
+        click() {
+
+            console.log('Você clicou no label 2')
+        }
+    },
+    {
+
+        label: 'Label 3',
+        click() {
+
+            console.log('Você clicou no label 3')
+        }
+    },
+    {
+
+        label: 'Label 4',
+        click() {
+
+            console.log('Você clicou no label 4')
+        }
+    }
+]
 
 
 
