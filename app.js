@@ -93,13 +93,10 @@ let bandejaTemplate = [
             console.log('Você clicou no label 1')
             let janela3 = new BrowserWindow({
 
-                webPreferences: {
-
-                    nodeIntegration: true,
-                    width: 500,
-                    height: 500,
-                    title: 'Janela 3'
-                }
+                width: 400,
+                height: 400,
+                frame: false,
+                resizable: false
             })
             janela3.loadFile('./views/janela3.html')
 
