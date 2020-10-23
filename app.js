@@ -1,6 +1,6 @@
 const electron = require('electron')
 const sizeOf = require('image-size')
-const { app, BrowserWindow, ipcMain, Menu } = electron
+const { app, BrowserWindow, ipcMain, Menu, Tray } = electron
 
 //mudamos a variavel de const para let para podermos fazer uma atribuicao a ela mais tarde
 let mainWindow
@@ -9,6 +9,14 @@ let janela2
 
 
 app.on('ready', () => {
+
+    const tray = new Tray('./public/assets/img/charger.png')
+    tray.setToolTip('Aplicação criada com electron js')
+
+    tray.on('click', () => {
+
+        console.log('Ícone de bandeja clicado')
+    })
 
     mainWindow = new BrowserWindow({
 
