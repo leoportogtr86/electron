@@ -1,5 +1,4 @@
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Electron_Software_Framework_Logo.svg/1024px-Electron_Software_Framework_Logo.svg.png)
-
+![](https://ih1.redbubble.net/image.738593393.9833/st,small,507x507-pad,600x600,f8f8f8.u1.jpg)
 
 # Electron
 ## Meus estudos de electron js, para criação de aplicações desktop usando html, css e javascript.
